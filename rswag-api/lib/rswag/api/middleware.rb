@@ -21,7 +21,7 @@ module Rswag
           mime = Rack::Mime.mime_type(::File.extname(path), 'text/plain')
           headers = { 'Content-Type' => mime }.merge(@config.swagger_headers || {})
           body = unload_swagger(filename, swagger)
-
+          byebug
           return [
             '200',
             headers,
